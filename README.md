@@ -1,1 +1,6 @@
-# dynalize
+# Dynalize: Dynamic Analysis of Mobile Apps in a Platform-as-a-Service Cloud
+
+Ensuring the software quality of mobile applications with respect to performance, robustness, energy consumption, security and privacy is an important problem for a growing researcher and developer community. In this paper, we present Dynalize, a Platform-as-a-Service cloud for the dynamic analysis of mobile applications. It allows researchers and developers to investigate mobile applications at runtime in a virtual device cloud and to publish the performed analyses as web services. In contrast to existing approaches, it makes use of container virtualization on top of Infrastructure-as-a-Service instances, enabling dynamic provisioning and fast deployment of dynamic analyses. A custom container layout and a novel storage solution on the virtual server layer ensures cost- and runtime-efficient large-scale analyses of thousands of apps. The applicability of Dynalize is demonstrated by a security analysis of about 6,000 Android applications. Experiments on container startup, virtual device to container throughput and different storage back ends show the feasibility of the proposed approach.
+
+
+http://ieeexplore.ieee.org/abstract/document/7214136/

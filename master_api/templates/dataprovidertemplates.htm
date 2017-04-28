@@ -1,0 +1,29 @@
+		<!-- Don't try to render mustache templates with jinja -->
+		{% raw %}	
+			<script id="tmplDataProviderList" type="x-tmpl-mustache">
+			{{#data}}
+				<tr id="datadef_{{datadef_id}}" data-uri="{{uri}}">
+					<td class="clickable">{{name}}</td>
+					<td class="clickable">{{dataprovider_id}}</td>
+					<td class="clickable">{{source}}</td>
+					<td class="clickable">{{destination}}</td>
+					<td class="col-md-2 text-right">
+						<a class="btn btn-primary" id="copy-{{datadef_id}}" data-uri="{{uri}}"><i class="fa fa-copy fa-fw"></i></a>
+						<a class="btn btn-danger" id="delete-{{datadef_id}}" data-uri="{{uri}}"><i class="fa fa-trash-o fa-fw"></i></a>
+					</td>
+				</tr>
+			{{/data}}
+			</script>
+
+			<script id="tmplDataProviders" type="x-tmpl-mustache">
+			{{#data}}
+				<option value="{{datadef_id}}" data-uri="{{uri}}">{{name}}</option>
+			{{/data}}
+			</script>
+			
+			<script id="tmplDataProviderType" type="x-tmpl-mustache">
+			{{#data}}
+				<option value="{{dataprovider_id}}" data-uri="{{uri}}">{{name}}</option>
+			{{/data}}
+			</script>
+		{% endraw %}				

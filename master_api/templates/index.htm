@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/web_static/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/web_static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/web_static/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/web_static/css/jquery-ui.min.css">
+		<link rel="stylesheet" href="/web_static/css/main.css">
+		<script src="/web_static/js/jquery-2.1.3.min.js"></script>
+		<script src="/web_static/js/bootstrap.min.js"></script>
+		<script src="/web_static/js/mustache.min.js"></script>
+		<script src="/web_static/js/bootstrap-confirmation.js"></script>
+		<script src="/web_static/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/web_static/js/jquery-ui.min.js"></script>
+		<script src="/web_static/js/reconnecting-websocket.min.js"></script>
+
+		<!-- Module Imports (make sure helpermodule is first!)-->
+		<script src="/web_static/js/helpermodule.js"></script>
+		<script src="/web_static/js/mainmodule.js"></script>
+		<script src="/web_static/js/scriptmodule.js"></script>
+		<script src="/web_static/js/layermodule.js"></script>
+		<script src="/web_static/js/cloudmodule.js"></script>
+		<script src="/web_static/js/dataprovidermodule.js"></script>
+		<script src="/web_static/js/jobmodule.js"></script>
+		<script src="/web_static/js/taskmodule.js"></script>
+		<script src="/web_static/js/workermodule.js"></script>
+
+		<!-- Don't try to render mustache templates with jinja -->
+		{% raw %}
+			<script id="tmplAlert" type="x-tmpl-mustache">
+				<div class="alert alert-{{alertType}}" role="alert" id="alert">
+					<strong>{{alertCaption}}</strong> {{alertText}}
+				</div>
+			</script>
+		{% endraw %}
+
+		{% include 'scripttemplates.htm' %}
+		{% include 'layertemplates.htm' %}
+		{% include 'cloudtemplates.htm' %}
+		{% include 'dataprovidertemplates.htm' %}
+		{% include 'jobtemplates.htm' %}
+		{% include 'tasktemplates.htm' %}
+		{% include 'workertemplates.htm' %}
+	</head>
+
+	<body role="document">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+			  <div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">&lt;Dynalize&gt;</a>
+			  </div>
+			  <div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				  <li class="active"><a href="#">Home</a></li>
+				  <li><a id="aScripts"><i class="fa fa-code fa-fw"></i> Skripte</a></li>
+				  <li><a id="aLayers"><i class="fa fa-list-alt fa-fw"></i> Layer</a></li>
+				  <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cloud fa-fw"></i> Cloud <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+					  <li><a id="aClouds">Definition</a></li>
+					  <li><a id="aInstances">Instanzen</a></li>
+					</ul>
+				  </li>
+				  <li><a id="aDataProvider"><i class="fa fa-database fa-fw"></i> DataDefinition</a></li>
+				  <li><a id="aJobs"><i class="fa fa-sliders fa-fw"></i> Jobs</a></li>
+				  <li><a id="aTasks"><i class="fa fa-cubes fa-fw"></i> Tasks</a></li>
+				  <li><a id="aWorker"><i class="fa fa-server fa-fw"></i> Worker</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+
+		<div class="container" id="divAlert">
+		</div>
+
+
+		{% include 'cloud.htm' %}
+		{% include 'layer.htm' %}
+		{% include 'script.htm' %}
+		{% include 'dataprovider.htm' %}
+		{% include 'job.htm' %}
+		{% include 'task.htm' %}
+		{% include 'worker.htm' %}
+
+		<footer class="footer">
+			<a id="mainLogExpand" class="btn btn-default" style="vertical-align: top;"><i class="fa fa-expand fa-fw"></i></a>
+			<a id="mainLogClear" class="btn btn-default" style="vertical-align: top;"><i class="fa fa-eraser fa-fw"></i></a>
+		  <div class="container" style="overflow-y:auto; display: inline-block;">
+		  </div>
+		</footer>
+
+	</body>
+</html>

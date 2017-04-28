@@ -1,0 +1,13 @@
+boto==2.36.0
+celery==3.1.17
+docker-py==1.1.0
+Flask==0.10.1
+GitPython==0.3.6
+requests==2.6.0
+SQLAlchemy==0.9.8
+CherryPy==3.6.0
+ws4py==0.3.4
+
+#Flask-RESTful==0.3.2
+#Need to install specific commit as it contains an important fix
+-e git+https://github.com/flask-restful/flask-restful.git@72afe1aba68a61dba0c84d180364c9d2fd50fbd6#egg=Flask-RESTful

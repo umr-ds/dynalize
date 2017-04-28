@@ -1,0 +1,21 @@
+		<!-- Don't try to render mustache templates with jinja -->
+		{% raw %}				
+			<script id="tmplScriptList" type="x-tmpl-mustache">
+			{{#data}}
+				<tr id="script_{{script_id}}" data-uri="{{uri}}">
+					<td class="clickable">{{name}}</td>
+					<td class="clickable">{{modified_on}}</td>
+					<td class="col-md-2 text-right">
+						<a class="btn btn-primary" id="copy-{{script_id}}" data-uri="{{uri}}"><i class="fa fa-copy fa-fw"></i></a>
+						<a class="btn btn-danger" id="delete-{{script_id}}" data-uri="{{uri}}"><i class="fa fa-trash-o fa-fw"></i></a>
+					</td>
+				</tr>
+			{{/data}}
+			</script>
+			
+			<script id="tmplScripts" type="x-tmpl-mustache">
+			{{#data}}
+				<option value="{{script_id}}" data-uri="{{uri}}">{{name}}</option>
+			{{/data}}
+			</script>			
+		{% endraw %}

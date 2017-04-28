@@ -1,0 +1,11 @@
+		<!-- Don't try to render mustache templates with jinja -->
+		{% raw %}	
+			<script id="tmplWorkerList" type="x-tmpl-mustache">
+			{{#data}}
+				<tr id="worker_{{hostname}}">
+					<td class="clickable">{{hostname}}</td>
+				</tr>		
+			{{/data}}
+			</script>
+
+		{% endraw %}				

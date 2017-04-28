@@ -1,0 +1,16 @@
+		<!-- Don't try to render mustache templates with jinja -->
+		{% raw %}	
+			<script id="tmplJobList" type="x-tmpl-mustache">
+			{{#data}}
+				<tr id="job_{{job_id}}" data-uri="{{uri}}">
+					<td class="clickable">{{name}}</td>
+					<td class="clickable">{{clouddef_id}}</td>
+					<td class="col-md-2 text-right">
+						<a class="btn btn-success" id="start-{{job_id}}" data-uri="{{uri}}"><i class="fa fa-play fa-fw"></i></a>
+						<a class="btn btn-primary" id="copy-{{job_id}}" data-uri="{{uri}}"><i class="fa fa-copy fa-fw"></i></a>
+						<a class="btn btn-danger" id="delete-{{job_id}}" data-uri="{{uri}}"><i class="fa fa-trash-o fa-fw"></i></a>
+					</td>
+				</tr>
+			{{/data}}
+			</script>
+		{% endraw %}				

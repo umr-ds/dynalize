@@ -1,0 +1,61 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  height: 99.9%;
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #ddd;
+  z-index: 999;
+}
+
+body {
+    margin: 0, 0, 60px, 0;
+	padding: 0;
+	#min-height: 100%;
+	font-family:helvetica;
+	#height: 99.9%;
+	
+	-webkit-user-select:none;
+	-webkit-text-size-adjust:none;
+	margin-bottom: 60px;
+}
+
+a {
+    -webkit-touch-callout: none !important;
+    color: #000000;
+    text-decoration: none;
+	cursor: pointer;
+}
+
+
+#txtScriptContent {
+	margin: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+
+ul#ulLayerTree li:last-child {
+    font-weight: bold;
+}
+
+ul#ulLayerTree li:nth-last-child(+2) {
+	font-weight: bold;
+    font-style:italic;
+}
+
+.hiddenPage {
+	display: none;
+}

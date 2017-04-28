@@ -1,0 +1,47 @@
+		<!-- Don't try to render mustache templates with jinja -->
+		{% raw %}	
+			<script id="tmplTaskList" type="x-tmpl-mustache">
+			{{#data}}
+				<tr id="task_{{task_id}}" data-uri="{{uri}}" data-taskid="{{task_id}}" {{#exception}}class="danger"{{/exception}}>
+					<td class="clickable">{{job_id}}</td>
+					<td class="clickable">{{filename}}</td>
+					<td class="clickable">{{#completed}}<i class="fa fa-check fa-fw" style="color:green"></i>{{/completed}}{{^completed}}<i class="fa fa-times fa-fw" style="color:red"></i>{{/completed}}</td>
+					<td class="clickable">{{exit_code}}</td>
+					<td class="clickable">{{duration}}</td>
+					<td class="col-md-2 text-right">
+						<a class="btn btn-danger" id="delete-{{task_id}}" data-uri="{{uri}}"><i class="fa fa-trash-o fa-fw"></i></a>
+					</td>
+				</tr>
+				<tr id="taskdetails_{{task_id}}" style="display:none;">
+					<td>&nbsp;</td>
+					<td colspan="4">
+						{{#output}}
+							<div>
+								Output:<br>
+								<pre>{{output}}</pre>
+							</div>
+						{{/output}}
+						{{#build_logs}}
+							<div>
+								<br>Build Log:<br>
+								<pre>{{build_logs}}</pre>
+							</div>
+						{{/build_logs}}
+						{{#exception}}
+							<div>
+								<br>Exception:<br>
+								<pre>{{exception}}</pre>
+							</div>	
+						{{/exception}}
+						{{#traceback}}
+							<div>
+								<br>Traceback:<br>
+								<pre>{{traceback}}</pre>
+							</div>
+						{{/traceback}}						
+					</td>					
+				</tr>				
+			{{/data}}
+			</script>
+
+		{% endraw %}				

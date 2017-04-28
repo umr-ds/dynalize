@@ -1,0 +1,199 @@
+	<!-- Clouds -->
+	<div class="page hiddenPage" id="divClouds">
+		<div class="container">
+			<legend>CloudDefinition</legend>
+			<table class="table table-hover" id="tblClouds">
+				<thead>
+					<tr>
+						  <th>Name</th>
+						  <th>CloudProvider</th>
+						  <th>Snapshot-ID</th>
+						  <th>Snapshot-Image</th>
+						  <th class="text-right">Aktionen</th>
+					</tr>
+				  </thead>
+				<tbody>
+					<tr>
+						<td>
+							<i class="fa fa-spinner fa-spin fa-lg"></i>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="container">
+			<form class="form-horizontal">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Neue CloudDefinition</legend>
+
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="txtCloudName">Name</label>  
+					  <div class="col-sm-10">
+						<input id="txtCloudName" name="txtCloudName" type="text" class="form-control input-md">	
+					  </div>
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="cboCloudType">CloudProvider</label>  
+					  <div class="col-sm-10">
+						<select class="form-control" id="cboCloudType" name="cboCloudType">
+						</select>
+					  </div>
+					</div>		
+					
+					<hr>	
+					
+					<div id="divCloudEc2Specific">
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2BaseAMI">Base AMI</label>  
+						  <div class="col-sm-10">
+							<input id="txtCloudEC2BaseAMI" name="txtCloudEC2BaseAMI" type="text" class="form-control input-md">	
+						  </div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2Key">Keypair</label>  
+						  <div class="col-sm-10">
+							<input class="form-control" id="txtCloudEC2Key" name="txtCloudEC2Key" type="text">
+						  </div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2SecurityGroup">Security Group</label>  
+						  <div class="col-sm-10">
+							<input class="form-control" id="txtCloudEC2SecurityGroup" name="txtCloudEC2SecurityGroup" type="text">
+						  </div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2SubnetId">Subnet ID</label>  
+						  <div class="col-sm-10">
+							<input class="form-control" id="txtCloudEC2SubnetId" name="txtCloudEC2SubnetId" type="text">
+						  </div>
+						</div>
+						
+						<hr>
+												
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2AccessKey">AWS Access Key</label>  
+						  <div class="col-sm-10">
+							<input id="txtCloudEC2AccessKey" name="txtCloudEC2AccessKey" type="text" class="form-control input-md">	
+						  </div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2SecretKey">AWS Secret Key</label>  
+						  <div class="col-sm-10">
+							<input id="txtCloudEC2SecretKey" name="txtCloudEC2SecretKey" type="text" class="form-control input-md">	
+						  </div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-2 control-label" for="txtCloudEC2KeyInfo"></label>  
+						  <div class="col-sm-10">
+							<div class="alert alert-warning" role="alert" id="txtCloudEC2KeyInfo" style="display:none">
+							<b>Warnung!</b> Access Key und Secret Key werden unverschlüsselt gespeichert. Es wird empfohlen, diese Informationen z.B. in den Umgebungsvariablen zu hinterlegen!
+							</div>
+						  </div>
+						</div>
+					</div>
+					
+					<hr>	
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="cboCloudVirtualDeviceLayer">Virtual Device Layer</label>  
+					  <div class="col-sm-10">
+						<select class="form-control" id="cboCloudVirtualDeviceLayer" name="cboCloudVirtualDeviceLayer">
+						</select>
+					  </div>
+					</div>						
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="cboCloudTestLayer">Test Layer</label>  
+					  <div class="col-sm-10">
+						<select class="form-control" id="cboCloudTestLayer" name="cboCloudTestLayer">
+						</select>
+					  </div>
+					</div>		
+					
+					<!--<div class="form-group">
+					  <label class="col-sm-2 control-label" for="ulCloudTestTree">Hierarchie</label>  
+					  <div class="col-sm-10">
+						<ul id="ulCloudTestTree" name="ulCloudTestTree">
+							<li>(Aktueller Layer)</li>
+						</ul>
+					  </div>
+					</div>-->
+					
+					<hr>	
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="txtCloudClientStartupParameters">Client start up Parameter</label>  
+					  <div class="col-sm-10">
+						<input id="txtCloudClientStartupParameters" name="txtCloudClientStartupParameters" type="text" class="form-control input-md">	
+					  </div>
+					</div>
+								
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="txtCloudSnapshotId">Snapshot ID</label>  
+					  <div class="col-sm-10">
+						<input id="txtCloudSnapshotId" name="txtCloudSnapshotId" type="text" class="form-control input-md" disabled>	
+					  </div>
+					</div>
+
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="txtCloudSnapshotImageId">Snapshot Image ID</label>  
+					  <div class="col-sm-10">
+						<input id="txtCloudSnapshotImageId" name="txtCloudSnapshotImageId" type="text" class="form-control input-md" disabled>	
+						<button id="btnCloudSnapshotCreate" name="btnCloudSnapshotCreate" class="btn btn-default"><i class="fa fa-cogs"></i> Erzeugen</button>
+						<button id="btnCloudStartDeploymentInst" name="btnCloudStartDeploymentInst" class="btn btn-default"><i class="fa fa-play-circle-o"></i> Start Deployment-Instance</button>
+					  </div>
+					</div>					
+
+					<!-- Button (Double) -->
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" for="btnLayerSave"></label>
+					  <div class="col-sm-10">
+						<button id="btnCloudSave" name="btnCloudSave" class="btn btn-success"><i class="fa fa-save"></i> Speichern</button>
+						<button id="btnCloudCancel" name="btnCloudCancel" class="btn btn-danger"><i class="fa fa-remove"></i> Abbrechen</button>
+					  </div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- /Clouds -->
+	
+	
+	
+	<!-- Instances -->
+	<div class="page hiddenPage" id="divInstances">
+		<div class="container">
+			<legend>Instanzen</legend>
+			<button id="btnInstanceRefresh" name="btnInstanceRefresh" class="btn btn-default"><i class="fa fa-refresh"></i></button>
+			<table class="table table-hover" id="tblInstances">
+				<thead>
+					<tr>
+						  <th>Provider ID</th>
+						  <th>Hostname</th>
+						  <th>Comment</th>
+						  <th>Cloud ID</th>
+						  <th>Provider Name</th>						  
+						  <th>Status</th>
+						  <th class="text-right">Aktionen</th>
+					</tr>
+				  </thead>
+				<tbody>
+					<tr>
+						<td>
+							<i class="fa fa-spinner fa-spin fa-lg"></i>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- /Instances -->
